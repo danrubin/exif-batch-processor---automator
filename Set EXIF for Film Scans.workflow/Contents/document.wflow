@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>160</string>
+	<key>AMApplicationVersion</key>
+	<string>2.0.2</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>affirmativeTitle</key>
+					<dict/>
+					<key>displayWarning</key>
+					<dict/>
+					<key>explanationText</key>
+					<dict/>
+					<key>negativeTitle</key>
+					<dict/>
+					<key>questionText</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>Are you sure you want to continue?</string>
+						</array>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Ask for Confirmation.action</string>
+				<key>ActionName</key>
+				<string>Ask for Confirmation</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>affirmativeTitle</key>
+					<string>Yes, I'm 100% sure »</string>
+					<key>displayWarning</key>
+					<false/>
+					<key>explanationText</key>
+					<string>This script will replace the following EXIF data for the selected files:
+
+Make, Model, ISO</string>
+					<key>negativeTitle</key>
+					<string>Cancel</string>
+					<key>questionText</key>
+					<string>Are you sure you want to continue?</string>
+				</dict>
+				<key>Application</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Ask for Confirmation</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMAppleScriptAction</string>
+				<key>InputUUID</key>
+				<string>10A8FA8A-4B3D-4A1C-88D6-BEBDB2B11FB0</string>
+				<key>Keywords</key>
+				<array>
+					<string>Message</string>
+					<string>Ask</string>
+					<string>Display</string>
+					<string>Prompt</string>
+					<string>Show</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>EF79ED22-B572-4223-A9DB-F0484326407C</string>
+				<key>UUID</key>
+				<string>4D9FA7E8-AA13-468D-BD3A-198F9F424BDB</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>questionText</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string>Cancel</string>
+						<key>name</key>
+						<string>negativeTitle</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>explanationText</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>displayWarning</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>OK</string>
+						<key>name</key>
+						<string>affirmativeTitle</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>521.500000:904.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Ask for Confirmation.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.alias-object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1</string>
+				<key>AMGenericAction</key>
+				<true/>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>fromApplication</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.alias-object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Selected Items.action</string>
+				<key>ActionName</key>
+				<string>Get Selected Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>fromApplication</key>
+					<string>Finder</string>
+				</dict>
+				<key>Application</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.GetSelectedItems</string>
+				<key>CFBundleVersion</key>
+				<string>1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>GetSelectedItemsAction</string>
+				<key>InputUUID</key>
+				<string>BDEE6276-63ED-4327-A6A7-0E5AFA3F16F4</string>
+				<key>Keywords</key>
+				<array/>
+				<key>OutputUUID</key>
+				<string>B0ADAA7C-E9DA-4F38-B9F9-B1637C7855B3</string>
+				<key>UUID</key>
+				<string>69F85CB8-DB08-45D3-896B-2335A3D2C0DB</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>Finder</string>
+						<key>name</key>
+						<string>fromApplication</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>recurse</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Folder Contents.action</string>
+				<key>ActionName</key>
+				<string>Get Folder Contents</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>recurse</key>
+					<true/>
+				</dict>
+				<key>Application</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.GetFolderContents</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>GetFolderContents</string>
+				<key>InputUUID</key>
+				<string>1DAD69B1-76AE-4CE0-AED2-75F466141BC6</string>
+				<key>Keywords</key>
+				<array>
+					<string>File</string>
+					<string>Folder</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>E7B745EB-DEBD-4DD7-B4A9-8A57D8508FD9</string>
+				<key>UUID</key>
+				<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>recurse</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>521.500000:796.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.alias-object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>comparisonOperator</key>
+					<dict/>
+					<key>comparisonProperty</key>
+					<dict/>
+					<key>comparisonValue</key>
+					<dict/>
+					<key>findingName</key>
+					<dict/>
+					<key>whoseSettings</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.alias-object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Filter Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Filter Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>comparisonOperator</key>
+					<string>contains</string>
+					<key>comparisonProperty</key>
+					<string>name</string>
+					<key>comparisonValue</key>
+					<string></string>
+					<key>findingName</key>
+					<string>files</string>
+					<key>whoseSettings</key>
+					<array>
+						<dict>
+							<key>property</key>
+							<string>name extension</string>
+							<key>qualifier</key>
+							<string>contains</string>
+							<key>type</key>
+							<string>string</string>
+							<key>value</key>
+							<string>tif</string>
+						</dict>
+					</array>
+				</dict>
+				<key>Application</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.FilterFinderItems</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>FilterFinderItemsAction</string>
+				<key>InputUUID</key>
+				<string>DE3D5A2B-6867-4762-AE9F-5EC0887A8B7C</string>
+				<key>Keywords</key>
+				<array>
+					<string>Filter</string>
+					<string>File</string>
+					<string>Folder</string>
+					<string>Kind</string>
+					<string>Type</string>
+					<string>Name</string>
+					<string>Extension</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>B8EC40AA-729A-4648-960C-45E7AD2A6B69</string>
+				<key>UUID</key>
+				<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>name</string>
+						<key>name</key>
+						<string>comparisonProperty</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>comparisonValue</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string>contains</string>
+						<key>name</key>
+						<string>comparisonOperator</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>521.500000:754.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Filter Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		(**********************************************************************************************************
+	Copyright ©2009 Dan Rubin. Do not distribute without explicit permission. This notice must remain intact on all copies of this file.
+	
+	
+	CONTACT INFO:
+	email: dan@superfluousbanter.org
+	web: http://superfluousbanter.org
+	
+	
+	REQUIREMENTS:
+	This script requires Phil Harvey's excellent exiftool (http://www.sno.phy.queensu.ca/~phil/exiftool/) — download and
+	install it before running this script.
+	
+	
+	UPDATED: 2009-02-07
+	VERSION: 0.1
+	
+	VERSION HISTORY:
+	2009-02-07 - 0.1 - Initial release.
+	
+	
+	INSTRUCTIONS
+	Basic customization of this script is simply a matter of knowing what cameras you have, and deciding if they belong in an
+	existing category or require a new one, then making a few small tweaks to the script below.
+	
+	To add a make, model, or film speed, just extend the existing lists, following the conventions in the default lists.
+	
+	To create a new category (e.g. for medium format cameras), duplicate existing categories under Make, Model, and Film, 
+	making sure to also add your new "Make" category variable to the myManufacturers list. You will also have to duplicate and 
+	customize lines within each IF statement in the SCRIPT area, under EXIF:Model and EXIF:ISO.
+	
+	Adding more EXIF data types is also possible, using the same approach. If you're willing to take a stab at it, make sure
+	you check out Phil Harvey's list of EXIF Tags first: http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/EXIF.html
+	
+	If you extend this script, I'd love to hear about it - drop me a line at the email address above and tell me about the
+	improvements you've made; they may even make it into the official script one day.
+	
+	
+	DONATIONS
+	I've put personal time into creating and testing this script in order to make it presentable (not to mention
+	maintaining it in the future). If you find it useful, please send a small token of your appreciation via PayPal to the
+	email address above. Your karma will thank you.
+	
+	-Dan
+	***********************************************************************************************************)			(************************************************* SETTINGS *************************************************)			(* CONFIG: Set variables for make, model and film speeds *)	--Make	set my35mmCameras to {"Canon", "Nikon"}	set myInstantCameras to {"Polaroid", "Fuji"}	set myManufacturers to my35mmCameras &amp; myInstantCameras		--Model	set myCanonCameras to {"AE-1 Program", "FTb"}	set myNikonCameras to {"F1"}	set myPolaroidCameras to {"SX-70 Land Camera", "1000 Land Camera"}	set myFujiCameras to {"instax mini 55i", "instax mini 7"}		--Film	set my35mmFilm to {"100", "200", "400", "800", "1600"}	set myInstantFilm to {"100", "640", "800"} (* 100 = Artistic TZ | 640 = Polaroid 600 | 800 = Fuji instax mini *)			(* AUTOMATOR: set input as variable *)	set myImages to input			(************************************************** SCRIPT **************************************************)			(* EXIF:Make *)	set myMake to choose from list myManufacturers with prompt "Choose the type of camera:" OK button name "Continue..."		--error checking	if myMake is false then		display dialog "Script canceled (no camera type was selected)." buttons {"OK"} default button 1		return false	end if		set myMake to myMake as string			(* EXIF:Model *)	if myMake contains "Canon" then		set myType to choose from list myCanonCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Nikon" then		set myType to choose from list myNikonCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Polaroid" then		set myType to choose from list myPolaroidCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Fuji" then		set myType to choose from list myFujiCameras with prompt "Choose the model:" OK button name "Continue..."	end if		--error checking	if myType is false then		display dialog "Script canceled (no camera model was selected)." buttons {"OK"} default button 1		return false	end if		set myModel to myMake &amp; " " &amp; myType as string			(* EXIF:ISO *)	if myMake is in my35mmCameras then		set myISO to choose from list my35mmFilm with prompt "Choose the film speed:" OK button name "Continue..."	else if myMake is in myInstantCameras then		set myISO to choose from list myInstantFilm with prompt "Choose the film speed:" OK button name "Continue..."	end if		--error checking	if myISO is false then		display dialog "Script canceled (no film speed was selected)." buttons {"OK"} default button 1		return false	end if		set myISO to myISO as string			(************************************************* EXIFTOOL *************************************************)			repeat with eachFile in myImages		set myCommand to "exiftool -exif:Make=" &amp; myMake &amp; " -exif:Model=\"" &amp; myModel &amp; "\" -exif:ISO=" &amp; myISO &amp; " \"" &amp; POSIX path of eachFile &amp; "\""		do shell script myCommand	end repeat			(*************************************************** EXIT ***************************************************)		if (length of myImages is greater than 1) then		display dialog "The selected files have been processed. Please verify the integrity of the new files before deleting the _original versions." buttons {"OK"} default button 1	else		display dialog "The selected file has been processed. Please verify the integrity of the new file before deleting the _original version." buttons {"OK"} default button 1	end if		returnend run</string>
+				</dict>
+				<key>Application</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>C4E5A10A-3BEC-44F8-AFF6-046B26135D8A</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>2155F756-35A1-4CE3-90D4-44ECEA27EFA5</string>
+				<key>UUID</key>
+				<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>521.500000:712.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>25928BA0-FE54-46ED-8D31-388037E1F85E</key>
+		<dict>
+			<key>from</key>
+			<string>69F85CB8-DB08-45D3-896B-2335A3D2C0DB - 69F85CB8-DB08-45D3-896B-2335A3D2C0DB</string>
+			<key>to</key>
+			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
+		</dict>
+		<key>4E8494B0-BA3C-4BD8-9CE2-8604306B739E</key>
+		<dict>
+			<key>from</key>
+			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
+			<key>to</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+		</dict>
+		<key>7CAD6900-5875-4D24-AD65-E475BC23E6E9</key>
+		<dict>
+			<key>from</key>
+			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
+			<key>to</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+		</dict>
+		<key>99679DEE-B582-4478-9EB3-0E1BE6D8A72F</key>
+		<dict>
+			<key>from</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+			<key>to</key>
+			<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B - AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
+		</dict>
+		<key>DB683094-848F-4C1C-8C63-ACA9A704C316</key>
+		<dict>
+			<key>from</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+			<key>to</key>
+			<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B - AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
+		</dict>
+		<key>E0D67089-F9F1-4A9E-9036-6DCC216941A7</key>
+		<dict>
+			<key>from</key>
+			<string>4D9FA7E8-AA13-468D-BD3A-198F9F424BDB - 4D9FA7E8-AA13-468D-BD3A-198F9F424BDB</string>
+			<key>to</key>
+			<string>69F85CB8-DB08-45D3-896B-2335A3D2C0DB - 69F85CB8-DB08-45D3-896B-2335A3D2C0DB</string>
+		</dict>
+	</dict>
+	<key>state</key>
+	<dict>
+		<key>EditorSplitViewPosition</key>
+		<real>0.0</real>
+		<key>MainSplitViewPosition_v2</key>
+		<real>383</real>
+		<key>windowFrame</key>
+		<string>{{102, 34}, {1426, 990}}</string>
+		<key>windowFrameTopLeft</key>
+		<string>{{102, 0}, {1426, 990}}</string>
+		<key>workflowViewScrollPosition</key>
+		<string>{{0, 0}, {1043, 894}}</string>
+	</dict>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>50715380-7CD9-4CC4-8C36-472B913F62A0</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>model</string>
+		</dict>
+	</array>
+</dict>
+</plist>
