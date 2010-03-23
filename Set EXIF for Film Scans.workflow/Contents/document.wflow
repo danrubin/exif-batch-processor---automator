@@ -175,7 +175,7 @@ Make, Model, ISO</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>521.500000:904.000000</string>
+				<string>521.500000:701.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Confirmation.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -362,7 +362,7 @@ Make, Model, ISO</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>521.500000:796.000000</string>
+				<string>521.500000:593.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -516,7 +516,7 @@ Make, Model, ISO</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>521.500000:754.000000</string>
+				<string>521.500000:551.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Filter Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -574,10 +574,16 @@ Make, Model, ISO</string>
 	install it before running this script.
 	
 	
-	UPDATED: 2009-02-07
-	VERSION: 0.1
+	NOTES:
+	The Automator workflow currently filters based on file extension (see "Filter Finder Items" in the workflow), and is set to only
+	allow files ending in ".tif" to be processed. You may either change this filter or remove it entirely, but do both at your own risk.
+	
+	
+	UPDATED: 2009-04-30
+	VERSION: 0.2
 	
 	VERSION HISTORY:
+	2009-04-30 - 0.2 - Added NOTES section to explain the file extension filtering occurring in the Automator workflow. Also added a general disclaimer.
 	2009-02-07 - 0.1 - Initial release.
 	
 	
@@ -598,13 +604,20 @@ Make, Model, ISO</string>
 	improvements you've made; they may even make it into the official script one day.
 	
 	
+	DISCLAIMER
+	This should go without saying, however: By using this workflow you accept all risk associated with it. I'm not responsible
+	for anything that happens as a result of you using this script/workflow, including but not limited to data loss, hardware
+	damage, or the polar ice caps melting. You have been warned...
+	
+	
 	DONATIONS
 	I've put personal time into creating and testing this script in order to make it presentable (not to mention
 	maintaining it in the future). If you find it useful, please send a small token of your appreciation via PayPal to the
 	email address above. Your karma will thank you.
 	
 	-Dan
-	***********************************************************************************************************)			(************************************************* SETTINGS *************************************************)			(* CONFIG: Set variables for make, model and film speeds *)	--Make	set my35mmCameras to {"Canon", "Nikon"}	set myInstantCameras to {"Polaroid", "Fuji"}	set myManufacturers to my35mmCameras &amp; myInstantCameras		--Model	set myCanonCameras to {"AE-1 Program", "FTb"}	set myNikonCameras to {"F1"}	set myPolaroidCameras to {"SX-70 Land Camera", "1000 Land Camera"}	set myFujiCameras to {"instax mini 55i", "instax mini 7"}		--Film	set my35mmFilm to {"100", "200", "400", "800", "1600"}	set myInstantFilm to {"100", "640", "800"} (* 100 = Artistic TZ | 640 = Polaroid 600 | 800 = Fuji instax mini *)			(* AUTOMATOR: set input as variable *)	set myImages to input			(************************************************** SCRIPT **************************************************)			(* EXIF:Make *)	set myMake to choose from list myManufacturers with prompt "Choose the type of camera:" OK button name "Continue..."		--error checking	if myMake is false then		display dialog "Script canceled (no camera type was selected)." buttons {"OK"} default button 1		return false	end if		set myMake to myMake as string			(* EXIF:Model *)	if myMake contains "Canon" then		set myType to choose from list myCanonCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Nikon" then		set myType to choose from list myNikonCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Polaroid" then		set myType to choose from list myPolaroidCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Fuji" then		set myType to choose from list myFujiCameras with prompt "Choose the model:" OK button name "Continue..."	end if		--error checking	if myType is false then		display dialog "Script canceled (no camera model was selected)." buttons {"OK"} default button 1		return false	end if		set myModel to myMake &amp; " " &amp; myType as string			(* EXIF:ISO *)	if myMake is in my35mmCameras then		set myISO to choose from list my35mmFilm with prompt "Choose the film speed:" OK button name "Continue..."	else if myMake is in myInstantCameras then		set myISO to choose from list myInstantFilm with prompt "Choose the film speed:" OK button name "Continue..."	end if		--error checking	if myISO is false then		display dialog "Script canceled (no film speed was selected)." buttons {"OK"} default button 1		return false	end if		set myISO to myISO as string			(************************************************* EXIFTOOL *************************************************)			repeat with eachFile in myImages		set myCommand to "exiftool -exif:Make=" &amp; myMake &amp; " -exif:Model=\"" &amp; myModel &amp; "\" -exif:ISO=" &amp; myISO &amp; " \"" &amp; POSIX path of eachFile &amp; "\""		do shell script myCommand	end repeat			(*************************************************** EXIT ***************************************************)		if (length of myImages is greater than 1) then		display dialog "The selected files have been processed. Please verify the integrity of the new files before deleting the _original versions." buttons {"OK"} default button 1	else		display dialog "The selected file has been processed. Please verify the integrity of the new file before deleting the _original version." buttons {"OK"} default button 1	end if		returnend run</string>
+	***********************************************************************************************************)			(************************************************* SETTINGS *************************************************)			(* CONFIG: Set variables for make, model and film speeds *)	--Make	set my35mmCameras to {"Canon", "Nikon"}	set myInstantCameras to {"Polaroid", "Fuji"}	set myManufacturers to my35mmCameras &amp; myInstantCameras		--Model	set myCanonCameras to {"AE-1 Program", "FTb"}	set myNikonCameras to {"F1"}	set myPolaroidCameras to {"SX-70 Land Camera", "1000 Land Camera"}	set myFujiCameras to {"instax mini 55i", "instax mini 7"}		--Film	set my35mmFilm to {"100", "200", "400", "800", "1600"}	set myInstantFilm to {"100", "640", "800"} (* 100 = Artistic TZ | 640 = Polaroid 600 | 800 = Fuji instax mini *)			(* AUTOMATOR: set input as variable *)	set myImages to input			(************************************************** SCRIPT **************************************************)			(* EXIF:Make *)	set myMake to choose from list myManufacturers with prompt "Choose the type of camera:" OK button name "Continue..."		--error checking	if myMake is false then		display dialog "Script canceled (no camera type was selected)." buttons {"OK"} default button 1		return false	end if		set myMake to myMake as string			(* EXIF:Model *)	if myMake contains "Canon" then		set myType to choose from list myCanonCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Nikon" then		set myType to choose from list myNikonCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Polaroid" then		set myType to choose from list myPolaroidCameras with prompt "Choose the model:" OK button name "Continue..."	else if myMake contains "Fuji" then		set myType to choose from list myFujiCameras with prompt "Choose the model:" OK button name "Continue..."	end if		--error checking	if myType is false then		display dialog "Script canceled (no camera model was selected)." buttons {"OK"} default button 1		return false	end if		set myModel to myMake &amp; " " &amp; myType as string			(* EXIF:ISO *)	if myMake is in my35mmCameras then		set myISO to choose from list my35mmFilm with prompt "Choose the film speed:" OK button name "Continue..."	else if myMake is in myInstantCameras then		set myISO to choose from list myInstantFilm with prompt "Choose the film speed:" OK button name "Continue..."	end if		--error checking	if myISO is false then		display dialog "Script canceled (no film speed was selected)." buttons {"OK"} default button 1		return false	end if		set myISO to myISO as string			(************************************************* EXIFTOOL *************************************************)			repeat with eachFile in myImages		set myCommand to "exiftool -exif:Make=" &amp; myMake &amp; " -exif:Model=\"" &amp; myModel &amp; "\" -exif:ISO=" &amp; myISO &amp; " \"" &amp; POSIX path of eachFile &amp; "\""		do shell script myCommand	end repeat			(*************************************************** EXIT ***************************************************)	
+		if (length of myImages is greater than 1) then		display dialog "The selected files have been processed. Please verify the integrity of the new files before deleting the _original versions." buttons {"OK"} default button 1	else		display dialog "The selected file has been processed. Please verify the integrity of the new file before deleting the _original version." buttons {"OK"} default button 1	end if		returnend run</string>
 				</dict>
 				<key>Application</key>
 				<array>
@@ -662,7 +675,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>521.500000:712.000000</string>
+				<string>521.500000:509.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -672,47 +685,47 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>25928BA0-FE54-46ED-8D31-388037E1F85E</key>
-		<dict>
-			<key>from</key>
-			<string>69F85CB8-DB08-45D3-896B-2335A3D2C0DB - 69F85CB8-DB08-45D3-896B-2335A3D2C0DB</string>
-			<key>to</key>
-			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
-		</dict>
-		<key>4E8494B0-BA3C-4BD8-9CE2-8604306B739E</key>
-		<dict>
-			<key>from</key>
-			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
-			<key>to</key>
-			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
-		</dict>
-		<key>7CAD6900-5875-4D24-AD65-E475BC23E6E9</key>
-		<dict>
-			<key>from</key>
-			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
-			<key>to</key>
-			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
-		</dict>
-		<key>99679DEE-B582-4478-9EB3-0E1BE6D8A72F</key>
-		<dict>
-			<key>from</key>
-			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
-			<key>to</key>
-			<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B - AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
-		</dict>
-		<key>DB683094-848F-4C1C-8C63-ACA9A704C316</key>
-		<dict>
-			<key>from</key>
-			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
-			<key>to</key>
-			<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B - AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
-		</dict>
-		<key>E0D67089-F9F1-4A9E-9036-6DCC216941A7</key>
+		<key>14031216-0C89-4C85-8477-AFE6DE575528</key>
 		<dict>
 			<key>from</key>
 			<string>4D9FA7E8-AA13-468D-BD3A-198F9F424BDB - 4D9FA7E8-AA13-468D-BD3A-198F9F424BDB</string>
 			<key>to</key>
 			<string>69F85CB8-DB08-45D3-896B-2335A3D2C0DB - 69F85CB8-DB08-45D3-896B-2335A3D2C0DB</string>
+		</dict>
+		<key>1DCBF01C-10A3-4227-B372-D8774470E376</key>
+		<dict>
+			<key>from</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+			<key>to</key>
+			<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B - AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
+		</dict>
+		<key>25560216-94AC-4809-A7CD-E51B6F1239CB</key>
+		<dict>
+			<key>from</key>
+			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
+			<key>to</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+		</dict>
+		<key>84D0EA45-D08E-4BCD-BB4B-57F4867FF326</key>
+		<dict>
+			<key>from</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+			<key>to</key>
+			<string>AA71EB6D-F385-4689-BBEF-3CD317D1540B - AA71EB6D-F385-4689-BBEF-3CD317D1540B</string>
+		</dict>
+		<key>AF0C87D1-D123-4893-BF3B-3F6CBECCD27A</key>
+		<dict>
+			<key>from</key>
+			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
+			<key>to</key>
+			<string>736CF6EF-74F3-4161-A1E7-84DCDD3537CF - 736CF6EF-74F3-4161-A1E7-84DCDD3537CF</string>
+		</dict>
+		<key>BA696BF7-B074-4234-944D-FE1FA273F258</key>
+		<dict>
+			<key>from</key>
+			<string>69F85CB8-DB08-45D3-896B-2335A3D2C0DB - 69F85CB8-DB08-45D3-896B-2335A3D2C0DB</string>
+			<key>to</key>
+			<string>0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A - 0D9D54C8-5F86-449D-9DBB-C49CE2D9A90A</string>
 		</dict>
 	</dict>
 	<key>state</key>
@@ -722,11 +735,11 @@ end run</string>
 		<key>MainSplitViewPosition_v2</key>
 		<real>383</real>
 		<key>windowFrame</key>
-		<string>{{102, 34}, {1426, 990}}</string>
+		<string>{{12, 87}, {1426, 787}}</string>
 		<key>windowFrameTopLeft</key>
-		<string>{{102, 0}, {1426, 990}}</string>
+		<string>{{12, 0}, {1426, 787}}</string>
 		<key>workflowViewScrollPosition</key>
-		<string>{{0, 0}, {1043, 894}}</string>
+		<string>{{0, 0}, {1043, 691}}</string>
 	</dict>
 	<key>variables</key>
 	<array>
